@@ -1,0 +1,110 @@
+=Current model Spanninga=
+
+ * Current consumption: 600µA idle, 23mA active
+
+=Specifications=
+ * Power supply: 2*NiMH in series (min. 2V)
+ * Protection against incorrect insertion of batteries
+ * Low current consumption in idle mode
+ * Modes: always on - flicker - off
+ * cheap
+ * Small space to build it in -> limited number of components
+ * must go out automatically after 1h
+ * can only be lit in the dark
+
+=Design= 
+==Control circuit==
+ * must operate down to 1.8V -> no more 74-series logic -> use low cost MCU
+ * MCU must be brought into sleep mode, wake it with switch, external interrupt pin needed.
+===Choice microcontroller===
+||Atmel||attiny13||
+||Microchip||	only down to 2V||
+||ST||	only down to 3V, OTP-ROM||
+||TI||MSP430, minimum 20pins||
+||FreeScale||	MC9RS08KA1CSC||
+||Renesas	(formerly Hitachi)||only downto 2.7V (20pins)||
+||NXP||Not very interesting either||
+
+Final choice: Atmel ATTiny13
+ * I have experience with Atmel MCU
+ * has a PWM-output
+ * has a timer
+ * has an internal oscillator (saves a crystal)
+ * can be woken from external interrupt
+
+==Switch==
+ * use the one on the existing housing
+ * must be debounced in software
+
+==Reverse voltage protection==
+ * use MOSFET instead of Schottky.  More voltage loss can't be tolerated
+ * PMOS in series with Vcc or NMOS in series with Vss.
+ * Choice = SI1013R van Vishay (€0.33/st.) (Ron=2.7ohm @ Vgs=-1.8V)
+
+==Led powering==
+Led must continue to light at the same strength even when the power supply drops.  So a current control circuit is needed.
+Bij dalende voedingsspanning moet led even sterk blijven branden 
+stroomsturing van de led.
+
+===Options for led-controllers===
+ # LT1932
+  * ThinSOT-6
+  * available at NewarkOnline: €4.57 + €25 cost (free samples)
+  * 7 extra components needed (incl. LT1932 + led)
+  * 100nA consumption in shutdown
+  * shutdown-pin can be used for PWM-dimmer
+  * max. 40mA current output
+ # LM2623
+  * Mini SO-8
+  * available at Farnell: €2.44
+  * 7 componenten needed (incl. LM2623 + led)
+  * 2.5µA consumption in shutdown
+  * can't be used a PWM-dimmer
+ # TPS61041
+  * SOT23-5
+  * available at Farnell: €1.82
+  * 6 componenten needed (incl. TPS61041 + led)
+  * 1µA consumption in shutdown
+ # ZXSC400
+  * SOT23-6
+  * 6 components needed
+  * Available at Farnell: €1.11
+  * 4.5µA consumption in shutdown
+ # CAT4240-D
+  * max. 300mA
+  * Vin MIN=1.9V
+  * available at Farnell
+ # LT1618
+  * max. 2A
+  * Vin MIN=1.6V
+  * available at Farnell
+  * MSOP10
+  * 100nA consumption in shutdown
+
+==Led==
+Current led draws 25mA, type?, luminosity?
+
+||Type||Manufacturer||Luminosity||Lightflux `[`lm`]`||Opening angle `[`°`]`|| Price`[`€`]` ||Current `[`mA`]`||
+||OVL-3328||Multicomp||5000mcd@20mA||1.07||30°||
+||OVA-1088||Multicomp||2700mcd@20mA||4.97||90°||0.96||20 (3leds ->3*20)||
+||L-7676CSURC-E||Kingbright||600mcd@20mA|| ||70°||0.38||
+||HPWT-MD00-00000||LumiLeds||4400mcd@70mA||3.5||70°||0.55||70||
+||TLWR8900||Vishay|| ||3.0||45°|| ||70||
+||NSPRR70ASS-E||Nichia|| ||9.0||100°|| ||50||
+||OVFSRAC8||Optek|| ||8.0||100°||0.57||70||
+
+===Choice===
+
+ * better 3 `*` OVA1088 in series: 2 on each side, 1 signing backwards.
+ * 3 `*` 90° = 270° viewing angle
+ * Nichia gives most data in the datasheets. Their leds also have the best specs. But how can I order them?
+
+==Scientific data==
+
+ * Lumen - Lux - Candela (see wiki)
+ * It's better to specify to luminous flux to be independent of the opening angle.
+ * Optimal led control: http://www.ledsmagazine.com/news/5/5/11
+ * Japanese research: fCLK=60Hz, dutycycle=5% (Broca-Sulzer effect)
+ * Brücke-Bartley effect (brightness enhancement): 8Hz - 10Hz (75ms - ON)
+
+
