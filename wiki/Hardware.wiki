@@ -1,0 +1,7 @@
+#summary Hardware
+
+= Revision 0 =
+ * [http://code.google.com/p/bikelight/downloads/detail?name=bikelight_R0_schematic.pdf  Schematic]
+ * [http://code.google.com/p/bikelight/downloads/detail?name=bikelight_R0_assembly.pdf Assembly drawing]
+
+= Revision 1 = 
