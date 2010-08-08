@@ -1,5 +1,11 @@
-/*!file bikelight.c
+/*!\file bikelight.c
  * R0.0: First working version.
+ * R0.1: Changing documentation to Doxygen style
+ * R0.2: Solving bug: Sometimes 15 times larger power consumption when OFF.
+ *			When waking from OFF-mode, when it was too bright, the case 2 of timerA interrupt vector was never run.
+ *			So the analog comparator was not disabled before going to sleep.  This is corrected now and the current
+ *			consumption has been reduced from 14.2µA@3V to 200nA@3V.
+ *			
  *
  * Programming the low-fuse: avrdude -p t13 -P usb -c avrispmkII -U lfuse:w:0x6B:m
  * This makes the CPU run at 16kHz. -> ISP freq. MAX=16kHz/4=4kHz.-> 250us period 
@@ -23,19 +29,26 @@
 #include <avr/sleep.h>
 #include <avr/interrupt.h>
 
+//!All possible light modes for the three LEDs
 typedef enum{
-	STATE_OFF,
-	STATE_FLASHING1,
-	STATE_FLASHING2,
-	STATE_CONT_ON
+	STATE_OFF,											//!<LEDs OFF
+	STATE_FLASHING1,									//!<LEDs ON duty cycle=25%, f=10Hz
+	STATE_FLASHING2,									//!<LEDs ON duty cycle=75%, F=10Hz
+	STATE_CONT_ON										//!<LEDs continuously ON
 } OPERATING_STATES;
 
 static void setState(void);
 
-static volatile OPERATING_STATES yState=STATE_OFF;
-static volatile OPERATING_STATES yNextState=STATE_OFF;
+static volatile OPERATING_STATES yState=STATE_OFF;		//!<Holds the current state of the state machine
+static volatile OPERATING_STATES yNextState=STATE_OFF;	//!<Holds the next state of the state machine
+static volatile uint8_t bTooBright=0;					//!<Signals that it's still to bright outside to turn the
+														//		LEDs on.
 
-
+/*!Main function.  This one does it all.
+ *This function initializes the necessary registers and after that enters an infinite loop.
+ *When the LEDs are off, the MCU enters deep sleep mode to save power.
+ *The MCU will be waked when the user presses a button, because this will cause a pin change interrupt.
+ */
 int main(void){
 	//Disable clock dividing now, because it causes a lot of problems with programming 
 	//	timeout of the debugger.
@@ -55,9 +68,10 @@ int main(void){
 														//Trigger interrupt on rising edge.
 														//Set bandgap voltage as IN+ of the analog comparator
 	ADMUX|=(1<<MUX1)|(1<<MUX0);						//Set ADC3 as IN- of the analog comparator
+	ACSR|=(1<<ACD);									//Disable analog comparator
 
-	sei();
 	setState();
+	sei();
 	
 	while(1){
 		if(yState==STATE_OFF && yNextState==STATE_OFF){
@@ -71,7 +85,10 @@ int main(void){
 }//main
 
 
-//Pin change interrupt
+/*!Pin change interrupt
+ *Every time the user presses the button, this interrupt routine will be executed.
+ *The state machine will go to a next state, which means it will change the lighting mode of the LED.
+ */ 
 ISR(PCINT0_vect){
 	TCNT0=0;
 	switch(yState){
@@ -89,6 +106,15 @@ ISR(PCINT0_vect){
 	}
 }//PCINT0_vect
 
+/*!Timer complete interrupt
+ *Every time the timer reaches a complete period, this interrupt routine will be executed.  The flashing frequency
+ *of the LEDs is the inverse of this frequency.
+ *If the user has pressed the button, it means that he/she wants to move the state machine to a next state.  Before
+ *changing the state, there will be a check first to see if it's dark enough.  This prevents "bad" people from 
+ *turning on the light at daytime.
+ *When it's dark enough, the next light mode will be active, otherwise the state machine goes to the OFF mode (all
+ *LEDs off).
+ */
 ISR(TIM0_COMPA_vect){
 	static uint8_t delay=0;
 	static uint16_t ontime=0;
@@ -109,12 +135,14 @@ ISR(TIM0_COMPA_vect){
 				PORTB&=~(1<<PB3);				//Disable pull-up on pB.3
 											//Make MCU accept analog comparator interrupts
 				ADCSRB|=(1<<ACME);				//Select analog comparator input as pin ADC3
+				bTooBright=0;					//Reset the indicator for checking if it's too bright.
 				ACSR&=~(1<<ACD);				//Enable analog comparator
 				ACSR|=(1<<ACIE);				//Enable interrupts on analog comparator
 				break;
 			case 2:
 				ACSR|=(1<<ACD);				//Disable analog comparator
 				ACSR&=~(1<<ACIE);				//Disable interrupts on analog comparator
+				if(bTooBright)yNextState=STATE_OFF;
 				yState=yNextState;
 				setState();
 				break;
@@ -135,14 +163,21 @@ ISR(TIM0_COMPA_vect){
 	}
 }//TIM0_COMPA_vect
 
+/*!Analog comparator interrupt
+ *This is used for checking the light level.  If it's too bright, the LDR resistance will drop sharply.
+ *A smaller resistance of the LDR will make the capacitor charge faster.  If the analog reference level
+ *is reached to soon (because it's too bright), then the state machine will move to the OFF-state.
+ */
 ISR(ANA_COMP_vect){
 	//See what the value of counter 0 is.
 	//If it's too small, this means it's too bright to put the light on.
 	if(TCNT0<120){
-		yNextState=STATE_OFF;		
+		bTooBright=1;		
 	}
 }//ANA_COMP_vect
 
+/*!The necessary registers for every single LED lighting mode are set here.
+ */
 void setState(){
 	switch(yState){
 		case STATE_FLASHING1:
