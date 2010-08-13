@@ -1,6 +1,9 @@
 =Current model Spanninga=
 
- * Current consumption: 600µA idle, 23mA active
+ # Panasonic backlight: Current consumption: 600µA idle, 23mA active
+ # Batavus backlight: 
+ * OFF=17µA@3V, ON=42mA@3V.
+ * Three LEDs, Vf=2.42V
 
 =Specifications=
  * Power supply: 2*NiMH in series (min. 2V)
@@ -39,7 +42,7 @@ Final choice: Atmel ATTiny13
 ==Reverse voltage protection==
  * use MOSFET instead of Schottky.  More voltage loss can't be tolerated
  * PMOS in series with Vcc or NMOS in series with Vss.
- * Choice = SI1013R van Vishay (€0.33/st.) (Ron=2.7ohm @ Vgs=-1.8V)
+ * Choice = SI1013R by Vishay (€0.33/st.) (Ron=2.7ohm @ Vgs=-1.8V)
 
 ==Led powering==
 Led must continue to light at the same strength even when the power supply drops.  So a current control circuit is needed.
@@ -106,5 +109,3 @@ Current led draws 25mA, type?, luminosity?
  * Optimal led control: http://www.ledsmagazine.com/news/5/5/11
  * Japanese research: fCLK=60Hz, dutycycle=5% (Broca-Sulzer effect)
  * Brücke-Bartley effect (brightness enhancement): 8Hz - 10Hz (75ms - ON)
-
-
