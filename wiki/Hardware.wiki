@@ -5,3 +5,5 @@
  * [http://code.google.com/p/bikelight/downloads/detail?name=bikelight_R0_assembly.pdf Assembly drawing]
 
 = Revision 1 = 
+ * [http://bikelight.googlecode.com/files/bikelight_R1_schematic.pdf Schematic]
+ * [http://bikelight.googlecode.com/files/bikelight_R1_assembly.pdf Assembly drawing]
