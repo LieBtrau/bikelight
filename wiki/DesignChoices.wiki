@@ -100,8 +100,7 @@ Current led draws 25mA, type?, luminosity?
  * better 3 `*` OVA1088 in series: 2 on each side, 1 signing backwards.
  * 3 `*` 90° = 270° viewing angle
  * Nichia gives most data in the datasheets. Their leds also have the best specs. But how can I order them?
- * As the Batavus tail light was changed, the LED's of that light will be kept.  Their 
-   package is standard 5mm-LED-package.
+ * As the Batavus tail light was changed, the LED's of that light will be kept.  Their package is standard 5mm-LED-package.
  
 ==Scientific data==
 
