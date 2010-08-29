@@ -46,11 +46,9 @@ Final choice: Atmel ATTiny13
 
 ==Led powering==
 Led must continue to light at the same strength even when the power supply drops.  So a current control circuit is needed.
-Bij dalende voedingsspanning moet led even sterk blijven branden 
-stroomsturing van de led.
 
 ===Options for led-controllers===
- # LT1932
+ # *LT1932*
   * ThinSOT-6
   * available at NewarkOnline: €4.57 + €25 cost (free samples)
   * 7 extra components needed (incl. LT1932 + led)
@@ -83,6 +81,7 @@ stroomsturing van de led.
   * available at Farnell
   * MSOP10
   * 100nA consumption in shutdown
+  * Very hard to solder using Pb-free solder.
 
 ==Led==
 Current led draws 25mA, type?, luminosity?
@@ -101,7 +100,9 @@ Current led draws 25mA, type?, luminosity?
  * better 3 `*` OVA1088 in series: 2 on each side, 1 signing backwards.
  * 3 `*` 90° = 270° viewing angle
  * Nichia gives most data in the datasheets. Their leds also have the best specs. But how can I order them?
-
+ * As the Batavus tail light was changed, the LED's of that light will be kept.  Their 
+   package is standard 5mm-LED-package.
+ 
 ==Scientific data==
 
  * Lumen - Lux - Candela (see wiki)
