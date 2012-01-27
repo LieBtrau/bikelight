@@ -6,7 +6,7 @@
  * CAMDEN-BOSS - BIM 5002/12 - DIECAST BOX, can be ordered at  [http://be.farnell.com/camden-boss/bim-5002-12/box-diecast/dp/1171660?Ntt=117-1660 Farnell]
 
 =Electronics=
-[http://pilom.com/BicycleElectronics/DynamoCircuits.htm Martin Schmidt's site] is the only site I found on the internet that has such a detailed analysis of dynamos and schematics for powering LEDs.
+[http://pilom.com/BicycleElectronics/DynamoCircuits.htm pilom.com] is the only site I found on the internet that has such a detailed analysis of dynamos and schematics for powering LEDs.
 Circuit 7 has been made with two LEDs and powered by a bottle dynamo.
 As it is mentioned on the site, remove the two zener diodes from your dynamo to get maximum power from your dynamo.
 
