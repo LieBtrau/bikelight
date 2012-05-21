@@ -7,7 +7,7 @@
 
 =Specifications=
  * Power supply: 2*NiMH in series (min. 2V)
- * Protection against incorrect insertion of batteries
+ * Reverse polarity protection
  * Low current consumption in idle mode
  * Modes: always on - flicker - off
  * cheap
