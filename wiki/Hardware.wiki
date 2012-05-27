@@ -7,3 +7,6 @@
 = Revision 1 = 
  * [http://bikelight.googlecode.com/files/bikelight_R1_schematic.pdf Schematic]
  * [http://bikelight.googlecode.com/files/bikelight_R1_assembly.pdf Assembly drawing]
+
+= Revision 2 =
+ * [http://bikelight.googlecode.com/files/ControlPCB_R2.PDF Assembly drawing + schematic]
