@@ -16,7 +16,11 @@ As it is mentioned on the site, remove the two zener diodes from your dynamo to 
  * Cree Inc. XMLAWT-00-0000-0000T6053
  * Luxeon LXML-PWC2
 
-The Luxeon LED has been chosen because of highest efficiency.  The package is hard to solder by hand.  So it's much better to opt for this LED presoldered on a star-PCB.  This can be found at:
+=LED star modules (added 2013)=
+ * [http://www.digikey.be/search/en?x=0&y=0&lang=en&site=be&keywords=1125-1163-ND Digikey 1125-1163-ND]
+ * [http://www.conrad.be/ce/nl/product/182774/Cree-XLamp-MX-6-op-Star-print-CREE-MX6AWT-A1-STAR-000E51-Koud-wit-130-lm-120- Conrad 182774 - 89]
+
+The Luxeon LED had been chosen because of highest efficiency.  The package is hard to solder by hand.  So it's much better to opt for this LED presoldered on a star-PCB.  This can be found at:
  * [http://www.futureelectronics.com/en/Technologies/Product.aspx?ProductID=REBELSTARESCW200OPULENT9003841 Future Electronics]
  * [http://www.luxeonstar.com/Cool-White-5650K-20mm-Star-Rebel-235-lm-p/mr-wc310-20s.htm Luxeon star]
 
@@ -41,7 +45,7 @@ The wire to the dynamo still had to be shortened. The unit has been aimed so tha
  * The protective coating from the front screen is yet to be removed.
  * There's a knot in the wire going to the dynamo, serving as "pull" protection.
  * All components have been soldered on some piece of breadboard.
- * The base of the lenses has been removed, because they didn't fit on the LED star.  Actually you need LEDs without such a wide base.  It's quite a hassle to remove it.
+ * The base of the lenses has been removed, because they didn't fit on the LED star.  Actually you need lenses without such a wide base.  It's quite a hassle to remove it.
  * Lenses have been fixed to the housing using thermal glue.  The adhesion of the glue is not so good to be honest.
 
 ==Bottom view==
