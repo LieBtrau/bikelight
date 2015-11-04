@@ -55,14 +55,18 @@ void loop(void)
         shortFlash();
         _delay_ms(100);
     }else{
+        //power OFF 5V source
+        PORTB|=_BV(DDB2);
+        //Enable LEDs
+        PORTB|=_BV(DDB1);
+        //Wait for C1 to discharge
+        _delay_ms(500);
         set_sleep_mode(SLEEP_MODE_PWR_DOWN);
         cli();
         //PORTB.0 pull-up disable
         PUEB&=~(_BV(PUEB0));
         //PORTB.0 is output (set low)
         DDRB|=_BV(DDB0);
-        //power OFF 5V source
-        PORTB|=_BV(DDB2);
         sleep_enable();
         sleep_cpu();
         //Sleep forever. (until power is cycled, or an unlikely reset condition occurs)
