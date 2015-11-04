@@ -1,0 +1,27 @@
+
+# Altium
+**/History/*
+**/PDF/*
+**/Project Logs for *
+**/Project Outputs *
+*.drc
+*.html
+*.ods
+*.pcbdoc.htm
+*.pcbdocPreview
+*.pdf
+*.PDF
+*.PrjPCBStructure
+*.SchDocPreview
+**/Status Report.Txt
+*.xls
+
+
+#datasheet info
+**/datasheets/*
+
+#binaries
+*.elf
+*.hex
+*.eep
+*.o
