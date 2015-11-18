@@ -46,6 +46,14 @@ void shortFlash(void){
     _delay_ms(50);
 }
 
+void longFlash(void){
+    PORTB|=_BV(DDB1);
+    _delay_ms(3000);
+    PORTB&= ~(_BV(DDB1));
+    _delay_ms(50);
+}
+
+
 void loop(void)
 {
     if(yDownCounter){
@@ -57,10 +65,8 @@ void loop(void)
     }else{
         //power OFF 5V source
         PORTB|=_BV(DDB2);
-        //Enable LEDs
-        PORTB|=_BV(DDB1);
         //Wait for C1 to discharge
-        _delay_ms(500);
+        longFlash();
         set_sleep_mode(SLEEP_MODE_PWR_DOWN);
         cli();
         //PORTB.0 pull-up disable
