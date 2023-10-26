@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<HeeksCAD_Document>
+    <Program machine="iso" output_file="C:\Users\user\AppData\Local\Temp\test.tap" output_file_name_follows_data_file_name="1" program="# coding=CP1252&#x0A;# Dutch language or it&apos;s variant detected in Microsoft Windows&#x0A;import sys&#x0A;sys.path.insert(0,&apos;C:\\Program Files (x86)\\HeeksCNC\\HeeksCNC&apos;)&#x0A;import math&#x0A;from nc.nc import *&#x0A;import nc.iso&#x0A;&#x0A;output(&apos;C:\\Users\\user\\Dropbox\\BikeLight\\Mechanics\\TopView\\TopView.tap&apos;)&#x0A;program_begin(123, &apos;Test program&apos;)&#x0A;absolute()&#x0A;metric()&#x0A;set_plane(0)&#x0A;&#x0A;#(3 mm Carbide Slot Cutter)&#x0A;tool_defn( id=1, name=&apos;3 mm Carbide Slot Cutter&apos;, radius=1.5, length=15, gradient=-0)&#x0A;#(4 mm Carbide Slot Cutter)&#x0A;tool_defn( id=2, name=&apos;4 mm Carbide Slot Cutter&apos;, radius=2, length=15, gradient=-0)&#x0A;#(6 mm Carbide Slot Cutter)&#x0A;tool_defn( id=3, name=&apos;6 mm Carbide Slot Cutter&apos;, radius=3, length=63, gradient=-0)&#x0A;#(6 mm Carbide Ball End Mill)&#x0A;tool_defn( id=4, name=&apos;6 mm Carbide Ball End Mill&apos;, radius=3, length=63, gradient=-0)&#x0A;#(21 degreee Engraving Bit)&#x0A;tool_defn( id=5, name=&apos;21 degreee Engraving Bit&apos;, radius=1.5, length=63, gradient=0)&#x0A;#(15 mm Carbide Slot Cutter)&#x0A;tool_defn( id=6, name=&apos;15 mm Carbide Slot Cutter&apos;, radius=7.5, length=63, gradient=-0)&#x0A;workplane(1)&#x0A;comment(&apos;tool change to 3 mm Carbide Slot Cutter&apos;)&#x0A;tool_change( id=1)&#x0A;spindle(7000)&#x0A;feedrate_hv(800, 150)&#x0A;flush_nc()&#x0A;drill(x=5.39612787, y=5, z=0, depth=11, standoff=5, dwell=1, peck_depth=3.5, retract_mode=0, spindle_mode=0)&#x0A;drill(x=10.75356563, y=5, z=0, depth=11, standoff=5, dwell=1, peck_depth=3.5, retract_mode=0, spindle_mode=0)&#x0A;drill(x=41.60491811, y=5, z=0, depth=11, standoff=5, dwell=1, peck_depth=3.5, retract_mode=0, spindle_mode=0)&#x0A;end_canned_cycle()&#x0A;program_end()&#x0A;" units="1,00000000" ProgramPathControlMode="3" ProgramMotionBlendingTolerance="0,00010000" ProgramNaiveCamTolerance="0,00010000" brinell_hardness="0,00000000" raw_material_name="" max_spindle_speed="0,00000000" safety_height_defined="0" safety_height="0,00000000" id="1">
+        <Tools>
+            <Tool title="3 mm Carbide Slot Cutter" tool_number="1" id="1">
+                <params diameter="3,00000000" x_offset="0,00000000" tool_length_offset="15,00000000" max_advance_per_revolution="0,00000000" automatically_generate_title="1" material="1" orientation="6" type="3" corner_radius="0,00000000" flat_radius="1,00000000" cutting_edge_angle="0,00000000" cutting_edge_height="9,00000000" front_angle="95,00000000" tool_angle="60,00000000" back_angle="25,00000000" probe_offset_x="0,00000000" probe_offset_y="0,00000000" width_over_thickness="1,00000000" feedrate="50,00000000" extrusion_material="0" layer_height="0,00000000" temperature="220,00000000" filament_diameter="3,00000000" flowrate="255,00000000" gradient="-0,00000000" pitch="1,00000000" direction="0" />
+            </Tool>
+            <Tool title="4 mm Carbide Slot Cutter" tool_number="2" id="2">
+                <params diameter="4,00000000" x_offset="0,00000000" tool_length_offset="15,00000000" max_advance_per_revolution="0,00000000" automatically_generate_title="1" material="1" orientation="6" type="3" corner_radius="0,00000000" flat_radius="1,00000000" cutting_edge_angle="0,00000000" cutting_edge_height="9,00000000" front_angle="95,00000000" tool_angle="60,00000000" back_angle="25,00000000" probe_offset_x="0,00000000" probe_offset_y="0,00000000" width_over_thickness="1,00000000" feedrate="50,00000000" extrusion_material="0" layer_height="0,00000000" temperature="220,00000000" filament_diameter="4,00000000" flowrate="255,00000000" gradient="-0,00000000" pitch="1,00000000" direction="0" />
+            </Tool>
+            <Tool title="6 mm Carbide Slot Cutter" tool_number="3" id="3">
+                <params diameter="6,00000000" x_offset="0,00000000" tool_length_offset="63,00000000" max_advance_per_revolution="0,00000000" automatically_generate_title="1" material="1" orientation="6" type="3" corner_radius="0,00000000" flat_radius="6,00000000" cutting_edge_angle="0,00000000" cutting_edge_height="38,00000000" front_angle="95,00000000" tool_angle="60,00000000" back_angle="25,00000000" probe_offset_x="0,00000000" probe_offset_y="0,00000000" width_over_thickness="1,00000000" feedrate="50,00000000" extrusion_material="0" layer_height="0,00000000" temperature="220,00000000" filament_diameter="3,00000000" flowrate="255,00000000" gradient="-0,00000000" pitch="1,00000000" direction="0" />
+            </Tool>
+            <Tool title="6 mm Carbide Ball End Mill" tool_number="4" id="4">
+                <params diameter="6,00000000" x_offset="0,00000000" tool_length_offset="63,00000000" max_advance_per_revolution="0,00000000" automatically_generate_title="1" material="1" orientation="6" type="4" corner_radius="6,00000000" flat_radius="0,00000000" cutting_edge_angle="0,00000000" cutting_edge_height="38,00000000" front_angle="95,00000000" tool_angle="60,00000000" back_angle="25,00000000" probe_offset_x="0,00000000" probe_offset_y="0,00000000" width_over_thickness="1,00000000" feedrate="50,00000000" extrusion_material="0" layer_height="0,00000000" temperature="220,00000000" filament_diameter="3,00000000" flowrate="255,00000000" gradient="-0,00000000" pitch="1,00000000" direction="0" />
+            </Tool>
+            <Tool title="21 degreee Engraving Bit" tool_number="5" id="5">
+                <params diameter="3,00000000" x_offset="0,00000000" tool_length_offset="63,00000000" max_advance_per_revolution="0,00000000" automatically_generate_title="1" material="1" orientation="6" type="11" corner_radius="0,00000000" flat_radius="0,00000000" cutting_edge_angle="21,00000000" cutting_edge_height="7,00000000" front_angle="95,00000000" tool_angle="60,00000000" back_angle="25,00000000" probe_offset_x="0,00000000" probe_offset_y="0,00000000" width_over_thickness="1,00000000" feedrate="50,00000000" extrusion_material="0" layer_height="0,00000000" temperature="220,00000000" filament_diameter="3,00000000" flowrate="255,00000000" gradient="0,00000000" pitch="1,00000000" direction="0" />
+            </Tool>
+            <Tool title="15 mm Carbide Slot Cutter" tool_number="6" id="6">
+                <params diameter="15,00000000" x_offset="0,00000000" tool_length_offset="63,00000000" max_advance_per_revolution="0,00000000" automatically_generate_title="1" material="1" orientation="6" type="3" corner_radius="0,00000000" flat_radius="6,00000000" cutting_edge_angle="0,00000000" cutting_edge_height="38,00000000" front_angle="95,00000000" tool_angle="60,00000000" back_angle="25,00000000" probe_offset_x="0,00000000" probe_offset_y="0,00000000" width_over_thickness="1,00000000" feedrate="50,00000000" extrusion_material="0" layer_height="0,00000000" temperature="220,00000000" filament_diameter="3,00000000" flowrate="255,00000000" gradient="-0,00000000" pitch="1,00000000" direction="0" />
+            </Tool>
+        </Tools>
+        <Fixtures />
+        <Operations>
+            <Pocket active="0" title="Pocket_Left" tool_number="2" id="8">
+                <params step="2,00000000" mat="0,00000000" from_center="1" keep_tool_down="1" use_zig_zag="0" zig_angle="0,00000000" zig_unidirectional="0" entry_move="0" />
+                <depthop clear="5,00000000" down="2,00000000" startdepth="0,00000000" depth="-3,75000000" r="2,00000000" abs_mode="0" />
+                <speedop hfeed="800,00000000" vfeed="150,00000000" spin="7000,00000000" />
+                <Sketch title="LeftPart" id="2">
+                    <Line col="0" id="34">
+                        <Point col="0" x="22,25356563" y="9,75000000" z="0,00000000" id="376" />
+                        <Point col="0" x="22,25356563" y="10,00000000" z="0,00000000" id="375" />
+                    </Line>
+                    <Line col="0" id="35">
+                        <Point col="0" x="22,25356563" y="10,00000000" z="0,00000000" id="368" />
+                        <Point col="0" x="0,39225574" y="10,00000000" z="0,00000000" id="367" />
+                    </Line>
+                    <Line col="0" id="36">
+                        <Point col="0" x="0,39225574" y="10,00000000" z="0,00000000" id="363" />
+                        <Point col="0" x="0,39225574" y="0,00000000" z="0,00000000" id="364" />
+                    </Line>
+                    <Line col="0" id="37">
+                        <Point col="0" x="0,39225574" y="0,00000000" z="0,00000000" id="371" />
+                        <Point col="0" x="22,25356563" y="0,00000000" z="0,00000000" id="372" />
+                    </Line>
+                    <Line col="0" id="38">
+                        <Point col="0" x="22,25356563" y="0,00000000" z="0,00000000" id="380" />
+                        <Point col="0" x="22,25356563" y="0,25000000" z="0,00000000" id="379" />
+                    </Line>
+                    <Arc col="0" ax="-0,00000000" ay="-0,00000000" az="-1,00000000" id="39">
+                        <Point col="0" x="22,25356563" y="0,25000000" z="0,00000000" id="384" />
+                        <Point col="0" x="22,25356563" y="9,75000000" z="0,00000000" id="383" />
+                        <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="385" />
+                    </Arc>
+                </Sketch>
+            </Pocket>
+            <Pocket active="0" title="Pocket_Right" tool_number="2" id="9">
+                <params step="2,00000000" mat="0,00000000" from_center="1" keep_tool_down="1" use_zig_zag="0" zig_angle="0,00000000" zig_unidirectional="0" entry_move="0" />
+                <depthop clear="5,00000000" down="2,00000000" startdepth="0,00000000" depth="-3,75000000" r="2,00000000" abs_mode="0" />
+                <speedop hfeed="800,00000000" vfeed="150,00000000" spin="7000,00000000" />
+                <Sketch title="RightPart" id="3">
+                    <Line col="0" id="46">
+                        <Point col="0" x="22,25356563" y="0,25000000" z="0,00000000" id="507" />
+                        <Point col="0" x="22,25356563" y="0,00000000" z="0,00000000" id="506" />
+                    </Line>
+                    <Line col="0" id="47">
+                        <Point col="0" x="22,25356563" y="0,00000000" z="0,00000000" id="503" />
+                        <Point col="0" x="44,11487552" y="0,00000000" z="0,00000000" id="502" />
+                    </Line>
+                    <Line col="0" id="48">
+                        <Point col="0" x="44,11487552" y="0,00000000" z="0,00000000" id="499" />
+                        <Point col="0" x="44,11487552" y="10,00000000" z="0,00000000" id="498" />
+                    </Line>
+                    <Line col="0" id="49">
+                        <Point col="0" x="44,11487552" y="10,00000000" z="0,00000000" id="495" />
+                        <Point col="0" x="22,25356563" y="10,00000000" z="0,00000000" id="494" />
+                    </Line>
+                    <Line col="0" id="50">
+                        <Point col="0" x="22,25356563" y="10,00000000" z="0,00000000" id="491" />
+                        <Point col="0" x="22,25356563" y="9,75000000" z="0,00000000" id="490" />
+                    </Line>
+                    <Arc col="0" ax="-0,00000000" ay="-0,00000000" az="-1,00000000" id="51">
+                        <Point col="0" x="22,25356563" y="9,75000000" z="0,00000000" id="486" />
+                        <Point col="0" x="22,25356563" y="0,25000000" z="0,00000000" id="485" />
+                        <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="487" />
+                    </Arc>
+                </Sketch>
+            </Pocket>
+            <Profile active="0" title="Profile_Circle" tool_number="2" id="4">
+                <params side="1" cut_mode="1" auto_roll_on="1" auto_roll_off="1" roll_radius="0,00000000" start_given="0" end_given="0" sort_sketches="1" offset_extra="0,00000000" do_finishing_pass="0" finishing_feed_rate="100,00000000" finish_cut_mode="0" finishing_step_down="1,00000000" />
+                <depthop clear="5,00000000" down="2,00000000" startdepth="0,00000000" depth="-3,75000000" r="2,00000000" abs_mode="0" />
+                <speedop hfeed="800,00000000" vfeed="150,00000000" spin="7000,00000000" />
+                <Sketch title="Circle" id="5">
+                    <Circle col="0" r="4,75000000" cx="22,25356563" cy="5,00000000" cz="0,00000000" ax="-0,00000000" ay="-0,00000000" az="-1,00000000" id="6">
+                        <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="0" />
+                        <Point col="0" x="68,75356563" y="205,00000000" z="0,00000000" id="51" />
+                        <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="0" />
+                        <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="0" />
+                        <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="0" />
+                        <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="0" />
+                    </Circle>
+                </Sketch>
+                <Tags />
+            </Profile>
+            <Profile active="0" title="Profile_Slit" tool_number="2" id="5">
+                <params side="0" cut_mode="1" auto_roll_on="1" auto_roll_off="1" roll_radius="0,00000000" start_given="0" end_given="0" sort_sketches="1" offset_extra="0,00000000" do_finishing_pass="0" finishing_feed_rate="100,00000000" finish_cut_mode="0" finishing_step_down="1,00000000" />
+                <depthop clear="5,00000000" down="2,00000000" startdepth="0,00000000" depth="-6,75000000" r="2,00000000" abs_mode="0" />
+                <speedop hfeed="800,00000000" vfeed="150,00000000" spin="7000,00000000" />
+                <Sketch title="Slit" id="6">
+                    <Line col="0" id="12">
+                        <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="29" />
+                        <Point col="0" x="38,76511474" y="5,00000000" z="0,00000000" id="30" />
+                    </Line>
+                </Sketch>
+                <Tags />
+            </Profile>
+            <Drilling active="1" title="Drilling" tool_number="1" id="1">
+                <params standoff="5,00000000" dwell="1,00000000" depth="11,00000000" peck_depth="3,50000000" sort_drilling_locations="1" retract_mode="0" spindle_mode="0" />
+                <symbols />
+                <speedop hfeed="800,00000000" vfeed="150,00000000" spin="7000,00000000" />
+                <Point col="0" x="5,39612787" y="5,00000000" z="0,00000000" id="177" />
+                <Point col="0" x="10,75356563" y="5,00000000" z="0,00000000" id="179" />
+                <Point col="0" x="41,60491811" y="5,00000000" z="0,00000000" id="178" />
+            </Drilling>
+        </Operations>
+        <SpeedReferences estimate_when_possible="1" id="1">
+            <SpeedReference title="Aluminium (15) with Carbide" surface_speed="182" tool_material="1" brinell_hardness_of_raw_material="15" raw_material_name="Aluminium" id="1" />
+            <SpeedReference title="Aluminium (15) with Carbide" surface_speed="33" tool_material="1" brinell_hardness_of_raw_material="15" raw_material_name="Aluminium" id="2" />
+            <SpeedReference title="Mild Steel (150) with Carbide" surface_speed="182" tool_material="1" brinell_hardness_of_raw_material="150" raw_material_name="Mild Steel" id="3" />
+            <SpeedReference title="Mild Steel (150) with Carbide" surface_speed="59" tool_material="1" brinell_hardness_of_raw_material="150" raw_material_name="Mild Steel" id="4" />
+            <SpeedReference title="Alloy Steel &lt; 0.3% carbon (200) with Carbide" surface_speed="106" tool_material="1" brinell_hardness_of_raw_material="200" raw_material_name="Alloy Steel &lt; 0.3% carbon" id="5" />
+            <SpeedReference title="Alloy Steel &lt; 0.3% carbon (200) with Carbide" surface_speed="24" tool_material="1" brinell_hardness_of_raw_material="200" raw_material_name="Alloy Steel &lt; 0.3% carbon" id="6" />
+            <SpeedReference title="Alloy Steel &gt; 0.3% carbon (200) with Carbide" surface_speed="99" tool_material="1" brinell_hardness_of_raw_material="200" raw_material_name="Alloy Steel &gt; 0.3% carbon" id="7" />
+            <SpeedReference title="Alloy Steel &gt; 0.3% carbon (200) with Carbide" surface_speed="24" tool_material="1" brinell_hardness_of_raw_material="200" raw_material_name="Alloy Steel &gt; 0.3% carbon" id="8" />
+            <CuttingRate title="Brinell (15) at 400 (mm^3/min)" brinell_hardness_of_raw_material="15,00000000" max_material_removal_rate="400,00000000" id="1" />
+            <CuttingRate title="Brinell (150) at 1600 (mm^3/min)" brinell_hardness_of_raw_material="150,00000000" max_material_removal_rate="1600,00000000" id="2" />
+        </SpeedReferences>
+        <nccode edited="0" id="1">
+            <ncblock id="0">
+                <text col="program">O123</text>
+                <text col="comment">(Test program)</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N10</text>
+                <text>G10</text>
+                <text>L1</text>
+                <text>P1</text>
+                <text> </text>
+                <text col="axis">R1.500</text>
+                <text col="axis">Z15.000</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N20</text>
+                <text>G10</text>
+                <text>L1</text>
+                <text>P2</text>
+                <text> </text>
+                <text col="axis">R2.000</text>
+                <text col="axis">Z15.000</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N30</text>
+                <text>G10</text>
+                <text>L1</text>
+                <text>P3</text>
+                <text> </text>
+                <text col="axis">R3.000</text>
+                <text col="axis">Z63.000</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N40</text>
+                <text>G10</text>
+                <text>L1</text>
+                <text>P4</text>
+                <text> </text>
+                <text col="axis">R3.000</text>
+                <text col="axis">Z63.000</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N50</text>
+                <text>G10</text>
+                <text>L1</text>
+                <text>P5</text>
+                <text> </text>
+                <text col="axis">R1.500</text>
+                <text col="axis">Z63.000</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N60</text>
+                <text>G10</text>
+                <text>L1</text>
+                <text>P6</text>
+                <text> </text>
+                <text col="axis">R7.500</text>
+                <text col="axis">Z63.000</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="comment">(tool change to 3 mm Carbide Slot Cutter)</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N70</text>
+                <text col="tool">T1</text>
+                <text col="misc">M06</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N80</text>
+                <text>G17</text>
+                <text>G90</text>
+                <text col="prep">G21</text>
+                <text>G54</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N90</text>
+                <text col="feed">G83</text>
+                <text>Q3.5</text>
+                <text col="axis">X5.396</text>
+                <text col="axis">Y5</text>
+                <text col="axis">Z-11</text>
+                <text col="axis">R5</text>
+                <text col="axis">F150</text>
+                <text col="axis">S7000</text>
+                <text col="misc">M03</text>
+                <path col="rapid">
+                    <line tool_number="0" x="5,00000000" y="5,00000000" z="5,00000000" />
+                </path>
+                <path col="feed">
+                    <line tool_number="0" x="5,00000000" y="5,00000000" z="-11,00000000" />
+                </path>
+                <path col="feed">
+                    <line tool_number="0" x="5,00000000" y="5,00000000" z="5,00000000" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N100</text>
+                <text col="feed">G83</text>
+                <text>Q3.5</text>
+                <text col="axis">X10.753</text>
+                <text col="axis">Y5</text>
+                <text col="axis">Z-11</text>
+                <text col="axis">R5</text>
+                <text col="axis">F800</text>
+                <path col="rapid">
+                    <line tool_number="0" x="10,00000000" y="5,00000000" z="5,00000000" />
+                </path>
+                <path col="feed">
+                    <line tool_number="0" x="10,00000000" y="5,00000000" z="-11,00000000" />
+                </path>
+                <path col="feed">
+                    <line tool_number="0" x="10,00000000" y="5,00000000" z="5,00000000" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N110</text>
+                <text col="feed">G83</text>
+                <text>Q3.5</text>
+                <text col="axis">X41.604</text>
+                <text col="axis">Y5</text>
+                <text col="axis">Z-11</text>
+                <text col="axis">R5</text>
+                <path col="rapid">
+                    <line tool_number="0" x="41,00000000" y="5,00000000" z="5,00000000" />
+                </path>
+                <path col="feed">
+                    <line tool_number="0" x="41,00000000" y="5,00000000" z="-11,00000000" />
+                </path>
+                <path col="feed">
+                    <line tool_number="0" x="41,00000000" y="5,00000000" z="5,00000000" />
+                </path>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N120</text>
+                <text>G80</text>
+            </ncblock>
+            <ncblock id="0">
+                <text col="blocknum">N130</text>
+                <text col="misc">M02</text>
+            </ncblock>
+        </nccode>
+    </Program>
+    <Sketch title="Circle" id="5">
+        <Circle col="0" r="4,75000000" cx="22,25356563" cy="5,00000000" cz="0,00000000" ax="-0,00000000" ay="-0,00000000" az="-1,00000000" id="6">
+            <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="0" />
+            <Point col="0" x="68,75356563" y="205,00000000" z="0,00000000" id="51" />
+            <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="0" />
+            <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="0" />
+            <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="0" />
+            <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="0" />
+        </Circle>
+    </Sketch>
+    <Sketch title="LeftPart" id="2">
+        <Line col="0" id="34">
+            <Point col="0" x="22,25356563" y="9,75000000" z="0,00000000" id="376" />
+            <Point col="0" x="22,25356563" y="10,00000000" z="0,00000000" id="375" />
+        </Line>
+        <Line col="0" id="35">
+            <Point col="0" x="22,25356563" y="10,00000000" z="0,00000000" id="368" />
+            <Point col="0" x="0,39225574" y="10,00000000" z="0,00000000" id="367" />
+        </Line>
+        <Line col="0" id="36">
+            <Point col="0" x="0,39225574" y="10,00000000" z="0,00000000" id="363" />
+            <Point col="0" x="0,39225574" y="0,00000000" z="0,00000000" id="364" />
+        </Line>
+        <Line col="0" id="37">
+            <Point col="0" x="0,39225574" y="0,00000000" z="0,00000000" id="371" />
+            <Point col="0" x="22,25356563" y="0,00000000" z="0,00000000" id="372" />
+        </Line>
+        <Line col="0" id="38">
+            <Point col="0" x="22,25356563" y="0,00000000" z="0,00000000" id="380" />
+            <Point col="0" x="22,25356563" y="0,25000000" z="0,00000000" id="379" />
+        </Line>
+        <Arc col="0" ax="-0,00000000" ay="-0,00000000" az="-1,00000000" id="39">
+            <Point col="0" x="22,25356563" y="0,25000000" z="0,00000000" id="384" />
+            <Point col="0" x="22,25356563" y="9,75000000" z="0,00000000" id="383" />
+            <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="385" />
+        </Arc>
+    </Sketch>
+    <Sketch title="RightPart" id="3">
+        <Line col="0" id="46">
+            <Point col="0" x="22,25356563" y="0,25000000" z="0,00000000" id="507" />
+            <Point col="0" x="22,25356563" y="0,00000000" z="0,00000000" id="506" />
+        </Line>
+        <Line col="0" id="47">
+            <Point col="0" x="22,25356563" y="0,00000000" z="0,00000000" id="503" />
+            <Point col="0" x="44,11487552" y="0,00000000" z="0,00000000" id="502" />
+        </Line>
+        <Line col="0" id="48">
+            <Point col="0" x="44,11487552" y="0,00000000" z="0,00000000" id="499" />
+            <Point col="0" x="44,11487552" y="10,00000000" z="0,00000000" id="498" />
+        </Line>
+        <Line col="0" id="49">
+            <Point col="0" x="44,11487552" y="10,00000000" z="0,00000000" id="495" />
+            <Point col="0" x="22,25356563" y="10,00000000" z="0,00000000" id="494" />
+        </Line>
+        <Line col="0" id="50">
+            <Point col="0" x="22,25356563" y="10,00000000" z="0,00000000" id="491" />
+            <Point col="0" x="22,25356563" y="9,75000000" z="0,00000000" id="490" />
+        </Line>
+        <Arc col="0" ax="-0,00000000" ay="-0,00000000" az="-1,00000000" id="51">
+            <Point col="0" x="22,25356563" y="9,75000000" z="0,00000000" id="486" />
+            <Point col="0" x="22,25356563" y="0,25000000" z="0,00000000" id="485" />
+            <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="487" />
+        </Arc>
+    </Sketch>
+    <Sketch title="Slit" id="6">
+        <Line col="0" id="12">
+            <Point col="0" x="22,25356563" y="5,00000000" z="0,00000000" id="29" />
+            <Point col="0" x="38,76511474" y="5,00000000" z="0,00000000" id="30" />
+        </Line>
+    </Sketch>
+    <Point col="0" x="5,39612787" y="5,00000000" z="0,00000000" id="177" />
+    <Point col="0" x="10,75356563" y="5,00000000" z="0,00000000" id="179" />
+    <Point col="0" x="41,60491811" y="5,00000000" z="0,00000000" id="178" />
+</HeeksCAD_Document>
