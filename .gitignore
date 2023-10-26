@@ -16,6 +16,13 @@
 **/Status Report.Txt
 *.xls
 
+*.xml
+*.log
+*.raw
+*.bak
+*.tap
+*.user
+
 
 #datasheet info
 **/datasheets/*

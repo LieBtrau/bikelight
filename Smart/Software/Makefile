@@ -4,8 +4,19 @@
 # is public domain), believed to be neutral to any flavor of "make"
 # (GNU make, BSD make, SysV make)
 
+# Toolchain installation
+# ----------------------
+# sudo apt install avr-gcc avr-libc avrdude
 
-MCU = attiny4
+# Programming tips
+# ----------------
+# Set VCC to 5V(200mA), not 3.3V
+# PCB must be facing down, so that the ball switch is open.
+
+# It might be necessary to cut PB1 loose for the programming to work.
+
+#MCU = attiny4
+MCU = attiny10
 FORMAT = ihex
 TARGET = sonbikelight
 SRC = test.c
