@@ -4,12 +4,12 @@
 #include <util/delay.h>
 #include <avr/interrupt.h>
 
-const uint8_t ON_TIME_CTR=100;//about 50s
-uint8_t yDownCounter=0;
+const uint16_t ON_TIME_CTR=500;//about 250s
+uint16_t wDownCounter=0;
 
 ISR(PCINT0_vect)
 {
-    yDownCounter=ON_TIME_CTR;
+    wDownCounter=ON_TIME_CTR;
 }
 
 void setup(void)
@@ -33,7 +33,7 @@ void setup(void)
     //Enable pin change interrupt 0
     PCMSK|=_BV(PCINT0);
     //Initialize the down counter
-    yDownCounter=ON_TIME_CTR;
+    wDownCounter=ON_TIME_CTR;
     //power ON 5V source
     PORTB&= ~(_BV(DDB2));
     sei();
@@ -56,8 +56,8 @@ void longFlash(void){
 
 void loop(void)
 {
-    if(yDownCounter){
-        yDownCounter--;
+    if(wDownCounter){
+        wDownCounter--;
         shortFlash();
         shortFlash();
         shortFlash();
